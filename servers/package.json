@@ -19,6 +19,7 @@
     "pg": "^8.10.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.1",
     "concurrently": "^8.0.1"
   }
 }
