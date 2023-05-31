@@ -8,7 +8,7 @@ export default function Reviews(props) {
     const fetchReviews = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3005/api/reviews/${props.listingId}`
+          `/api/reviews/${props.listingId}`
         );
         const data = await response.json();
         setReviews(data);
