@@ -7,9 +7,9 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 4000;
 const { Pool } = require("pg");
-const pool = new Pool({ connectionString: process.env.DATABASE });
+const pool = new Pool({ connectionString: process.env.DATABASE, max: 3 });
 
-pool.connect();
+// pool.connect();
 
 //Middleware
 app.use(bodyParser.json());
@@ -23,8 +23,10 @@ app.get("/api/location/:id", (req, res) => {
     if (err) {
       console.log(err);
       res.status(500).send("Error retrieving location from database");
+    } else {
+      res.json(result.rows);
     }
-    res.json(result.rows[0]);
+    
   });
 });
 
@@ -34,8 +36,10 @@ app.get("/api/location/description/:id", (req, res) => {
   if (err) {
     console.log(err);
     res.status(500).send("Error retrieving location description from database");
+  } else {
+    res.json(result.rows);
   }
-  res.json(result.rows[0]);
+  
 });
 });
 

@@ -5,11 +5,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3011;
 const { Pool } = require("pg");
-const db = new Pool({ connectionString: process.env.DATABASE });
-db.connect();
+const db = new Pool({ connectionString: process.env.DATABASE, max: 3 });
+// db.connect();
 const cors = require("cors");
 
-pool.connect();
+// pool.connect();
 
 //middleware
 app.use(express.json());

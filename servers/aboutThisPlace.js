@@ -4,9 +4,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3003;
-const { Client } = require("pg");
-const db = new Client({ connectionString: process.env.DATABASE });
-db.connect();
+const { Pool } = require("pg");
+const db = new Pool({ connectionString: process.env.DATABASE, max: 3 });
+// db.connect();
 const cors = require("cors");
 
 //Middleware

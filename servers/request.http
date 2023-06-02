@@ -12,13 +12,13 @@ GET http://localhost:3002/api/amenities/1
 
 
 ###Get location
-GET http://localhost:4000/api/location/1
+GET http://localhost:4000/api/location/4
 
 ###Get location
-GET http://localhost:4000/api/location/description/1
+GET http://localhost:4000/api/location/description/4
 
 ###Get a description for one property
-GET http://localhost:3050/api/about/2
+GET http://localhost:3003/api/about/4
 
 
 ###Get images to display in gallery
@@ -35,7 +35,7 @@ GET http://localhost:4001/api/hosts/about/2
 GET http://localhost:4001/api/hosts/photo/2
 
 ###Get reviews
-GET http://localhost:3005/api/reviews
+GET http://localhost:3005/api/reviews/1
 
 ###Get gallery
 GET http://localhost:3010/api/gallery

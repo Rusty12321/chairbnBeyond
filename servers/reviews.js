@@ -6,11 +6,11 @@ const { Pool } = require("pg");
 const cors = require("cors");
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE,
+  connectionString: process.env.DATABASE, max: 3
 });
 
 app.use(express.json());
-app.use(express.static("client"));
+// app.use(express.static("client"));
 app.use(cors());
 
 app.get("/api/reviews", (req, res) => {

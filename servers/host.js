@@ -7,9 +7,9 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 4001;
 const { Pool } = require("pg");
-const pool = new Pool({ connectionString: process.env.DATABASE });
+const pool = new Pool({ connectionString: process.env.DATABASE, max: 3 });
 
-pool.connect();
+// pool.connect();
 
 //Middleware
 app.use(bodyParser.json());
